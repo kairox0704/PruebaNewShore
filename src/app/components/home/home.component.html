@@ -1,0 +1,16 @@
+<!-- <div class="container col-8">
+    <div class="card-group">
+        <div class="container">  -->
+<div class="container col-10">
+    <div class="card-deck-wrapper ">
+        <div class="card-group justify-content-center align-items-center vh-100">
+            <div class="col-2" *ngFor="let home of homes">
+                <button (click)="selectHome(home)" class="btn stretched-link {{home}}">
+                    <img class="rounded mx-auto d-block" src="../../../assets/img/{{home}}.png"> 
+                    <h1 *ngIf="home!=''" class="card-title text-center ">{{home}}</h1>
+                    <h1 *ngIf="home==''" class="card-title text-center ">Sin Casa</h1>
+                </button>  
+            </div>
+        </div>
+    </div>
+</div>
