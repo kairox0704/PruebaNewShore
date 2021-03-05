@@ -1,1 +1,91 @@
-/* You can add global styles to this file, and also import other style files */
+$bg-color: #df0174
+$size: 1em
+
+$pri-Griffindor: #C22B0D
+$sec-Griffindor: #ABB601
+
+$pri-Slytherin: #2F9602
+$sec-Slytherin: #C8C8C8
+
+$pri-Hufflepuff: #8DA300
+$sec-Hufflepuff: #0F0F0A
+
+$pri-Ravenclaw: #1475E9
+$sec-Ravenclaw: #232346
+
+@mixin HomeGryffindor($color)
+  color: $pri-Griffindor
+
+@mixin dcGryffindor($color)
+  background: $color
+  color: textGryffindor($color)
+
+@function textGryffindor($bgcolor)
+  @if(lightness($bgcolor) > 50)
+    @return $pri-Griffindor
+  @else
+    @return $sec-Griffindor
+
+@mixin HomeSlytherin($color)
+  color: $pri-Slytherin
+
+@mixin dcSlytherin($color)
+  background: $color
+  color: textSlytherin($color)
+
+@function textSlytherin($bgcolor)
+  @if(lightness($bgcolor) > 50)
+    @return $pri-Slytherin
+  @else
+    @return $sec-Slytherin
+
+@mixin HomeHufflepuff($color)
+  color: $pri-Hufflepuff
+
+@mixin dcHufflepuff($color)
+  background: $color
+  color: textHufflepuff($color)
+
+@function textHufflepuff($bgcolor)
+  @if(lightness($bgcolor) > 50)
+    @return $pri-Hufflepuff
+  @else
+    @return $sec-Hufflepuff
+
+@mixin HomeRavenclaw($color)
+  color: $pri-Ravenclaw
+
+@mixin dcRavenclaw($color)
+  background: $color
+  color: textRavenclaw($color)
+
+@function textRavenclaw($bgcolor)
+  @if(lightness($bgcolor) > 50)
+    @return $pri-Ravenclaw
+  @else
+    @return $sec-Ravenclaw
+
+body
+  background-image: url("https://images4.alphacoders.com/173/173444.jpg")
+  background-size: 100% 100%
+  background-repeat: no-repeat
+  background-attachment: fixed
+  background-position: center 
+
+.Gryffindor
+    @include HomeGryffindor($pri-Griffindor)
+.Slytherin
+    @include HomeSlytherin($pri-Slytherin)
+.Hufflepuff
+    @include HomeHufflepuff($pri-Hufflepuff)
+.Ravenclaw
+    @include HomeRavenclaw($pri-Ravenclaw)
+
+.GryffindorMember
+    @include dcGryffindor($pri-Griffindor)
+.SlytherinMember
+    @include dcSlytherin($pri-Slytherin)
+.HufflepuffMember
+    @include dcHufflepuff($pri-Hufflepuff)
+.RavenclawMember
+    @include dcRavenclaw($pri-Ravenclaw)
