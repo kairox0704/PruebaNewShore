@@ -1,22 +1,52 @@
-<div class="row row-cols-1 row-cols-md-3 g-4">
-  <div class="card-deck">
-    <div *ngFor="let member of members" class="col">
+<div class="container">
+
+  <button type="button" class="btn btn-secondary" (click)="sortedByName()" >Name 
+    <svg *ngIf="soName" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+    </svg>
+    <svg *ngIf="!soName" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+    </svg>
+  </button>
+  <button type="button" class="btn btn-secondary" (click)="sortedByLast()" >Last Name 
+    <svg *ngIf="soLast" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+    </svg>
+    <svg *ngIf="!soLast" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+    </svg>
+  </button>
+  
+
+  <div class="row card-group">
+    <div class="col-3" *ngFor="let member of members">
       <div class="card {{member.house}}Member">
-        <img
-          src="{{member.image}}"
-          class="card-img-top"
-          alt="..."
-        />
+        <img class="card-img-top img-thumbnail ImagSize" src="{{member.image}}" alt="Card image">
         <div class="card-body">
-          <h5 class="card-title">{{member.name}}  {{member.lastName}}</h5>
-          <p class="card-text" *ngIf="member.gender"><strong>Gender: </strong>{{member.gender}}</p>
-          
-          <p class="card-text">
-            This is a longer card with supporting text below as a natural lead-in to
-            additional content. This content is a little bit longer.
-          </p>
+          <h3 class="card-text">Name: {{member.name}} {{member.lastName}}</h3>
+          <p class="card-text" *ngIf="member.gender">Gender: {{member.gender}}</p>
+          <p class="card-text" *ngIf="member.dateOfBirth">Birth date: {{member.dateOfBirth}}</p>
+          <p class="card-text" *ngIf="member.patronus">Patronus: {{member.patronus}}</p>
+          <p class="card-text" *ngIf="member.actor">Actor: {{member.actor}}</p>
+          <p class="card-text" *ngIf="member.ancestry">Ancestry: {{member.ancestry}} <span class="tab"></span> <img
+              class="img-thumbnail Bloodimg" src="../../assets/img/{{member.ancestry}}.png" alt="{{member.ancestry}}"
+              *ngIf="member.ancestry"></p>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="img_avatar.png" alt="Avatar" style="width:300px;height:300px;">
+    </div>
+    <div class="flip-card-back">
+      <h1>John Doe</h1> 
+      <p>Architect & Engineer</p> 
+      <p>We love that guy</p>
     </div>
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { HouseService } from '../../@core/service/house/house.service';
 import { MembersService } from '../../@core/service/members/members.service';
 import { Router } from '@angular/router';

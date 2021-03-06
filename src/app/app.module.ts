@@ -4,7 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { HouseComponent } from './components/house/house.component';
+import { HouseComponent, } from './components/house/house.component';
+import { HeaderComponent } from './components/header/header.component'
 import { HttpClientModule } from '@angular/common/http';
 import { APP_ROUTING } from './app.routes';
 
@@ -12,7 +13,8 @@ import { APP_ROUTING } from './app.routes';
   declarations: [
     AppComponent,
     HomeComponent,
-    HouseComponent
+    HouseComponent,
+    HeaderComponent,
   ],
   imports: [
     APP_ROUTING,

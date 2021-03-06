@@ -1,20 +1,33 @@
 $bg-color: #df0174
 $size: 1em
 
-$pri-Griffindor: #C22B0D
-$sec-Griffindor: #ABB601
+$pri-Griffindor: #8C030E
+$sec-Griffindor: #F29F05
 
 $pri-Slytherin: #2F9602
 $sec-Slytherin: #C8C8C8
 
-$pri-Hufflepuff: #8DA300
-$sec-Hufflepuff: #0F0F0A
+$pri-Hufflepuff: #D98E04
+$sec-Hufflepuff: #262626
+
+$pri-hogwarts: #2E4053
+$sec-hogwarts: #ABB2B9
 
 $pri-Ravenclaw: #1475E9
 $sec-Ravenclaw: #232346
 
 @mixin HomeGryffindor($color)
   color: $pri-Griffindor
+
+@mixin dchogwarts($color)
+  background: $color
+  color: texthogwarts($color)
+
+@function texthogwarts($bgcolor)
+  @if(lightness($bgcolor) > 50)
+    @return $pri-hogwarts
+  @else
+    @return $sec-hogwarts
 
 @mixin dcGryffindor($color)
   background: $color
@@ -81,6 +94,9 @@ body
 .Ravenclaw
     @include HomeRavenclaw($pri-Ravenclaw)
 
+.Member
+  @include dchogwarts($pri-hogwarts)
+  
 .GryffindorMember
     @include dcGryffindor($pri-Griffindor)
 .SlytherinMember
@@ -89,3 +105,25 @@ body
     @include dcHufflepuff($pri-Hufflepuff)
 .RavenclawMember
     @include dcRavenclaw($pri-Ravenclaw)
+
+.ImagSize
+  width: 400px
+  height: 400px
+
+.cardSize
+  width: 454px
+  height: 800px
+
+.Bloodimg
+  width: 50px
+  height: 50px
+  background-image: none !important
+  background-color: transparent
+
+
+$font-title:    Harry P, Harry P
+
+.head  
+  font: 100% $font-title
+  opacity: 0.5
+  justify-content: center
