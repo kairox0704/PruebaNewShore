@@ -17,6 +17,18 @@
     </svg>
   </button>
   
+  <form [formGroup]="contactForm">
+      <input type="text" formControlName="Name" placeholder="Name" >
+      <button (click)="Busqueda()" type="submit" class="btn-send">send</button>
+  </form>
+
+  <!-- <div class="input-group">
+    <input type="text" class="form-control" placeholder="Sample: Harry" aria-label="Sample: Harry" aria-describedby="srch_btn">
+    <div class="input-group-append">
+      <button id="srch_btn" class="btn btn-primary" (click)="Busqueda()"><i class="icon-search"></i> Search</button>
+      
+    </div>
+  </div> -->
 
   <div class="row card-group">
     <div class="col-3" *ngFor="let member of members">
@@ -33,20 +45,6 @@
               *ngIf="member.ancestry"></p>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <img src="img_avatar.png" alt="Avatar" style="width:300px;height:300px;">
-    </div>
-    <div class="flip-card-back">
-      <h1>John Doe</h1> 
-      <p>Architect & Engineer</p> 
-      <p>We love that guy</p>
     </div>
   </div>
 </div>

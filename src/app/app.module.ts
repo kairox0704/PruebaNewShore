@@ -8,6 +8,7 @@ import { HouseComponent, } from './components/house/house.component';
 import { HeaderComponent } from './components/header/header.component'
 import { HttpClientModule } from '@angular/common/http';
 import { APP_ROUTING } from './app.routes';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,12 +16,15 @@ import { APP_ROUTING } from './app.routes';
     HomeComponent,
     HouseComponent,
     HeaderComponent,
+    
   ],
   imports: [
     APP_ROUTING,
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
