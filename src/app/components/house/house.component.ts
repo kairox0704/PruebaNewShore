@@ -26,8 +26,7 @@ export class HouseComponent implements OnInit {
                }
 
   ngOnInit(): void {
-    this.getAll()
-    // this.builder();
+    this.getAll();
   }
 
   contactForm: FormGroup;
@@ -130,7 +129,8 @@ export class HouseComponent implements OnInit {
     let data = this.contactForm.value;
     let search_term = data.Name.toLocaleLowerCase()
     this.members.forEach(element => {
-      let name = element['name'].toLocaleLowerCase()
+      let conc = element.name+" "+element.lastName;
+      let name = conc.toLocaleLowerCase()
       console.log(search_term + " " + name)
       if(name.indexOf(search_term) >= 0){
         this.Result.push(element);

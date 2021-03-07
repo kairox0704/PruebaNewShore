@@ -1,4 +1,4 @@
 export interface house{
     name:String,
-    count:Number
+    count:number
 }
